@@ -157,7 +157,8 @@ class IntegrationTestCase extends TestCase
         if($socket == false)
         {
             $seleniumFound = false;
-            $seleniumDir = $_SERVER['HOME'].'/.selenium';
+            $location = \Config::get('testcases-laravel::selenium-jar-location', $_SERVER['HOME'].'/.selenium');
+            $seleniumDir = is_callable($location) ? $location() : $location;
             $files = scandir($seleniumDir);
 
             foreach ($files as $file) {

@@ -1,5 +1,5 @@
 {
-    "name": "zizaco/testcases-laravel",
+    "name": "zizaco/testcases-laravel2",
     "description": "Some classes to help write tests for laravel 4 applications",
     "keywords": ["laravel","illuminate","test","tdd","testcase","phpunit"],
     "license": "MIT",
@@ -22,6 +22,14 @@
         "psr-0": {
             "Zizaco\\TestCases": "src/"
         }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan config:publish zizaco/testcases-laravel2"
+        ],
+        "post-update-cmd": [
+            "php artisan config:publish zizaco/testcases-laravel2"
+        ]
     },
     "minimum-stability": "dev"
 }
